@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-md-6">
+    <h2><i class="fa fa-users"></i>Parent Clients</h2>
+  </div>
+  <div class="col-md-6">
+      <h5 class="text-right text-secondary">Count: {{count}}</h5>
+    </div>
+</div>
+
+<table *ngIf="parents?.length > 0; else noParents" class="table table-striped">
+  <thead class="thead-inverse">
+    <tr>
+      <th>Entity Id</th>
+      <th>Entity Name</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let parent of parents">
+      <td>{{parent.entityID}}</td>
+      <td>{{parent.entityName}}</td>
+      <td><a [routerLink]="['/children/'+parent.entityID]" href="#" class="btn btn-secondary btn-sm"><i class="fa fa-arrow-circle-o-right"></i>Children</a></td>
+      <td><a [routerLink]="['/limits/'+parent.entityID]" href="#" class="btn btn-secondary btn-sm"><i class="fa fa-arrow-circle-o-right"></i>Limits</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<ng-template #noParents>
+  <hr>
+  <h5>There are no Parents in the system</h5>
+</ng-template>
