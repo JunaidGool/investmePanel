@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-md-12">
+      <h2><i class="fa fa-users"></i>Limit Types</h2>
+    </div>
+
+  
+  <table *ngIf="limits?.length > 0; else noLimits" class="table table-striped">
+    <thead class="thead-inverse">
+      <tr>
+        <th>Limit Id</th>
+        <th>Limit Type</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let limit of limits">
+        <td>{{limit.limitID}}</td>
+        <td>{{limit.limitType}}</td>
+        <!-- <!-- <td><a [routerLink]="['/children/'+parent.entityID]" href="#" class="btn btn-secondary btn-sm"><i class="fa fa-arrow-circle-o-right"></i>Children</a></td> -->
+        <!-- <td><a [routerLink]="['/limits/'+parent.entityID]" href="#" class="btn btn-secondary btn-sm"><i class="fa fa-arrow-circle-o-right"></i>Limits</a></td> --> -->
+      </tr>
+    </tbody>
+  </table>
+  
+  <ng-template #noParents>
+    <hr>
+    <h5>There are no Limits in the system</h5>
+  </ng-template>

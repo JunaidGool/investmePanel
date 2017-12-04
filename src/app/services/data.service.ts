@@ -29,4 +29,10 @@ export class DataService {
     
   }
 
+  getLimits(){
+    return this.http.get('http://localhost:3000/api/limit')
+    .map(res => res.json());
+
+  }
+
 }

@@ -17,6 +17,7 @@ import { Router } from '@angular/router/src/router';
 
 import { DataService } from './services/data.service';
 import { Http } from '@angular/http/src/http';
+import { LimitgroupingComponent } from './components/limitgrouping/limitgrouping.component';
 
 
 
@@ -38,7 +39,8 @@ const appRoutes: Routes = [
     RelationshipsComponent,
     EntitiesComponent,
     NavbarComponent,
-    LimitsComponent
+    LimitsComponent,
+    LimitgroupingComponent
   ],
   imports: [
     BrowserModule,
