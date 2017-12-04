@@ -10,12 +10,14 @@ import { Entity } from '../../models/Entity';
 export class ParentsComponent implements OnInit {
   parents: any[];
   count: number;
+  url : string;
 
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
 
     this.dataService.getParents().subscribe((parents) => {
+      
       this.parents = parents;
       this.getCount();
     })

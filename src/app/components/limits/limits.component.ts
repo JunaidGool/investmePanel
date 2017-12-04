@@ -11,7 +11,7 @@ import { Loan } from '../../models/Loan';
 export class LimitsComponent implements OnInit {
   id: string;
   limits: Loan[];
-  limitDetails = [];
+  limitDetails: any[] = [];
 
   constructor(
     private dataService: DataService,

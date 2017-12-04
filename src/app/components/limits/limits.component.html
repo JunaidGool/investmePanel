@@ -4,37 +4,45 @@
       <i class="fa fa-arrow-circle-o-left"></i>
       Back to Dashboard
     </a>
+    <!-- <a [routerLink]="['/children']" href="#" class="btn btn-link">
+      <i class="fa fa-arrow-circle-o-left"></i>
+      Back to Children
+    </a> -->
   </div>
 </div>
 <hr>
 
 
-<div *ngIf="limits; else noParents" class="card">
-    <h3 class="card-header">Limits ID: {{limits.limitID}}</h3>
-    <div class="card-body">
-      <div class="row">
-        <div class="col-md-8">
-          <h4>Entity ID: {{limits.entityID}}</h4>
-        </div>
-        <div class="col-md-4">
-          <h3 class="pull-right">
-            Balance
-          </h3>
-        </div>
+<div *ngIf="limitDetails?.length > 0; else noLimits" class="card">
+  <h3 class="card-header">Limits ID: {{limitDetails[0].limitID}}</h3>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-8">
+        <h4>Entity ID: {{limitDetails[0].entityID}}</h4>
       </div>
+      <div class="col-md-4">
+        <ul class="pull-right">
+          <li>Exposure: {{limitDetails[0].exposureAmount}}</li>
+          <li>Current Limit: {{limitDetails[0].totalCurrentLimit}}</li>
+          <li>Approved Limit: {{limitDetails[0].totalApprovedLimit}}</li>
 
-      <hr>
-      <ul class="list-group">
-          <li class="list-group-item">Group Name:   {{limits.riskTakerGroupName}}</li>
-          <li class="list-group-item">Name:         {{limits.riskTakerName}}</li>
-          <li class="list-group-item">Product:      {{limits.product}}</li>
-          <li class="list-group-item">Risk Type:    {{limits.riskType}}</li>
-          <li class="list-group-item">Curreny:      {{limits.currency}}</li>
-      </ul>
+        </ul>
+      </div>
     </div>
-  </div>
 
-  <ng-template #noParents>
-      <hr>
-      <h5>There are no Parents in the system</h5>
-    </ng-template>
+    <hr>
+    <ul class="list-group">
+      <li class="list-group-item">Group Name: {{limitDetails[0].riskTakerGroupName}}</li>
+      <li class="list-group-item">Name: {{limitDetails[0].riskTakerName}}</li>
+      <li class="list-group-item">Product: {{limitDetails[0].product}}</li>
+      <li class="list-group-item">Risk Type: {{limitDetails[0].riskType}}</li>
+      <li class="list-group-item">Curreny: {{limitDetails[0].currency}}</li>
+    </ul>
+  </div>
+</div>
+
+<ng-template #noLimits>
+  <div class="card">
+    <h3 class="card-header">No Limits</h3>
+  </div>
+</ng-template>
