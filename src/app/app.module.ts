@@ -11,6 +11,7 @@ import { ChildrenComponent } from './components/children/children.component';
 import { RelationshipsComponent } from './components/relationships/relationships.component';
 import { EntitiesComponent } from './components/entities/entities.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { LimitsComponent } from './components/limits/limits.component';
 import { Router } from '@angular/router/src/router';
 
 
@@ -18,11 +19,13 @@ import { DataService } from './services/data.service';
 import { Http } from '@angular/http/src/http';
 
 
+
 //create routes
 const appRoutes: Routes = [
   {path:'', component:DashboardComponent, pathMatch: 'full'},
   {path:'children/:id', component:ChildrenComponent, pathMatch: 'full'},
-  {path:'parents', component:ParentsComponent, pathMatch: 'full'}
+  {path:'parents', component:ParentsComponent, pathMatch: 'full'},
+  {path: 'limits/:id',  component:LimitsComponent, pathMatch: 'full'}
 
 ]
 
@@ -34,7 +37,8 @@ const appRoutes: Routes = [
     ChildrenComponent,
     RelationshipsComponent,
     EntitiesComponent,
-    NavbarComponent
+    NavbarComponent,
+    LimitsComponent
   ],
   imports: [
     BrowserModule,

@@ -19,10 +19,14 @@ export class DataService {
   }
 
   getChildren(){
-    // let jsonData = JSON.parse(data);  
     return this.http.get('http://localhost:3000/api/relationship')
       .map(res => res.json());
-      // return this.parent
+  }
+
+  getLoans(){
+    return this.http.get('http://localhost:3000/api/loan')
+      .map(res => res.json());
+    
   }
 
 }

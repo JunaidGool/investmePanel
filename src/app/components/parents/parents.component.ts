@@ -17,7 +17,6 @@ export class ParentsComponent implements OnInit {
 
     this.dataService.getParents().subscribe((parents) => {
       this.parents = parents;
-      console.log(parents)
       this.getCount();
     })
     

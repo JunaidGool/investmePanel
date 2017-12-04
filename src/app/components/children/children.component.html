@@ -26,7 +26,6 @@
         <th>Entity Id</th>
         <th>Entity Name</th>
         <th></th>
-        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -34,8 +33,7 @@
         <td>{{subChild.relationshipType}}</td>
         <td>{{subChild.childID}}</td>
         <td>{{subChild.childName}}</td>
-        <!-- <td><a [routerLink]="['/children/'+parent.entityID]" href="#" class="btn btn-secondary btn-sm"><i class="fa fa-arrow-circle-o-right"></i>Children</a></td> -->
-        <td><a routerLink="/children" href="#" class="btn btn-secondary btn-sm"><i class="fa fa-arrow-circle-o-right"></i>Limits</a></td>
+        <td><a [routerLink]="['/limits/'+subChild.childID]" href="#" class="btn btn-secondary btn-sm"><i class="fa fa-arrow-circle-o-right"></i>Limits</a></td>
       </tr>
     </tbody>
   </table>

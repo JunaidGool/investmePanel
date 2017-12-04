@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-md-6">
+    <a routerLink="/" href="#" class="btn btn-link">
+      <i class="fa fa-arrow-circle-o-left"></i>
+      Back to Dashboard
+    </a>
+  </div>
+</div>
+<hr>
+
+
+<div *ngIf="limits; else noParents" class="card">
+    <h3 class="card-header">Limits ID: {{limits.limitID}}</h3>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-8">
+          <h4>Entity ID: {{limits.entityID}}</h4>
+        </div>
+        <div class="col-md-4">
+          <h3 class="pull-right">
+            Balance
+          </h3>
+        </div>
+      </div>
+
+      <hr>
+      <ul class="list-group">
+          <li class="list-group-item">Group Name:   {{limits.riskTakerGroupName}}</li>
+          <li class="list-group-item">Name:         {{limits.riskTakerName}}</li>
+          <li class="list-group-item">Product:      {{limits.product}}</li>
+          <li class="list-group-item">Risk Type:    {{limits.riskType}}</li>
+          <li class="list-group-item">Curreny:      {{limits.currency}}</li>
+      </ul>
+    </div>
+  </div>
+
+  <ng-template #noParents>
+      <hr>
+      <h5>There are no Parents in the system</h5>
+    </ng-template>
